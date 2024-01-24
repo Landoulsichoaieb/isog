@@ -1,0 +1,37 @@
+@use "placeholders";
+@use "@configured-variables" as variables;
+
+@mixin rtl {
+  @if variables.$enable-rtl-styles {
+    [dir="rtl"] & {
+      @content;
+    }
+  }
+}
+
+@mixin boxed-content($nest-selector: false) {
+  & {
+    @extend %boxed-content-spacing;
+
+    @at-root {
+      @if $nest-selector == false {
+        .layout-content-width-boxed#{&} {
+          @extend %boxed-content;
+        }
+      } @else {
+        .layout-content-width-boxed & {
+          @at-root #{&}-spacing {
+            // TODO: Use grid gutter variable here
+            // old padding-inline: 1.5rem;
+            padding-inline: 0rem;
+          }
+        
+          inline-size: 100%;
+          margin-inline: auto;
+          max-inline-size: 95.22%;
+          //old @extend %boxed-content;
+        }
+      }
+    }
+  }
+}

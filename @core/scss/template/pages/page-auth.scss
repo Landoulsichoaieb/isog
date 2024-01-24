@@ -1,0 +1,95 @@
+@font-face {
+  font-family: 'Geomanist-Light';
+  src: url('/fonts/Geomanist-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Geomanist-Regular';
+  src: url('/fonts/Geomanist-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Geomanist-Book';
+  src: url('/fonts/Geomanist-Book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GothamLight';
+  src: url('/fonts/GothamLight.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.layout-blank {
+  .auth-wrapper {
+    min-block-size: 100dvh;
+  }
+
+  .auth-v1-top-shape,
+  .auth-v1-bottom-shape {
+    position: absolute;
+    block-size: 233px;
+    inline-size: 238px;
+  }
+
+  .auth-card {
+    z-index: 1 !important;
+  }
+
+
+  .auth-v1-top-shape {
+    inset-block-start: -77px;
+    inset-inline-start: -40px;
+  }
+
+  .auth-v1-bottom-shape {
+    inset-block-end: -55px;
+    inset-inline-end: -55px;
+  }
+}
+
+@media (min-width: 960px) {
+  .skin--bordered {
+    .auth-card-v2 {
+      border-inline-start: 1px solid rgba(var(--v-border-color), var(--v-border-opacity)) !important;
+    }
+  }
+}
+.geomanist-light{
+  font-family: "Geomanist-light";
+}
+.geomanist-regular{
+  font-family: "Geomanist-Regular";
+}
+.geomanist-book{
+  font-family: "Geomanist-Book";
+}
+.gothamlight{
+  font-family: "GothamLight";
+}
+.AppTextField input {
+  height: 49px;
+}
+.colorized-svg {
+  filter: invert(100%) brightness(200%);
+}
+.style-svg-cliniq {
+  width: 59px;
+  height:23px;
+}
+.input-log{
+  background-color: #ffffff; 
+  border-radius: 9px;
+  font-size:12px;
+  text-align: left;
+  width: 293px;
+}
+.button-log{
+  background-color: #E5A439 !important;
+  font-size: 14px;
+  width:293px;
+  height: 49px !important;
+  border-radius: 9px;
+}
