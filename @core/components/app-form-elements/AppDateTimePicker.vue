@@ -2,17 +2,17 @@
 import FlatPickr from 'vue-flatpickr-component'
 import { useTheme } from 'vuetify'
 import {
-  VField,
-  filterFieldProps,
-  makeVFieldProps,
+VField,
+filterFieldProps,
+makeVFieldProps,
 } from 'vuetify/lib/components/VField/VField'
 import {
-  VInput,
-  makeVInputProps,
+VInput,
+makeVInputProps,
 } from 'vuetify/lib/components/VInput/VInput'
 
-import { filterInputAttrs } from 'vuetify/lib/util/helpers'
 import { useConfigStore } from '@core/stores/config'
+import { filterInputAttrs } from 'vuetify/lib/util/helpers'
 
 const props = defineProps({
   autofocus: Boolean,
@@ -276,9 +276,9 @@ input[altinputclass="inlinePicker"] {
 
     &.selected,
     &.selected:hover {
-      border-color: rgb(var(--v-theme-primary));
-      background: rgb(var(--v-theme-primary));
+      border-color: #E5A439;
       color: rgb(var(--v-theme-on-primary));
+      background-color: #E5A439;
 
       @include mixins.elevation(2);
     }

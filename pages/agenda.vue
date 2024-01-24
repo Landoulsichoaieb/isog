@@ -62,7 +62,7 @@ const none = () => {
           location="start"
           class="calendar-add-event-drawer"
           :temporary="$vuetify.display.mdAndDown"
-        >
+        ><!--
           <div style="margin: 1.4rem;">
             <VBtn
               block
@@ -71,7 +71,7 @@ const none = () => {
             >
               Add event
             </VBtn>
-          </div>
+          </div>-->
 
           <VDivider />
 
@@ -237,5 +237,7 @@ const none = () => {
       }
     }
   }
- 
+  .v-navigation-drawer--left{
+    border: none;
+  }
 </style>

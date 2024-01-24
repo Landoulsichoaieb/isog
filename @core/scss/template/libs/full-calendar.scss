@@ -56,11 +56,24 @@ body .fc {
   .fc-prev-button,
   .fc-next-button {
     padding: 0.25rem;
+  } //calendar changes
+  @font-face {
+    font-family: 'Geomanist-Regular';
+    src: url('/fonts/Geomanist-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
   }
-
   .fc-col-header .fc-col-header-cell .fc-col-header-cell-cushion {
     padding: 0.5rem;
     text-decoration: none !important;
+    height: 70px;
+    list-style: 70px;
+    font-family: 'Geomanist-Regular';
+    font-size: 18px;
+    color: #133155;
+    text-align: center;
+    letter-spacing: 0.45px;
+    line-height: 55px;
   }
 
   .fc-timegrid .fc-timegrid-slots .fc-timegrid-slot {
@@ -169,6 +182,9 @@ body .fc {
   // Calendar content container
   .fc-view-harness {
     min-block-size: 40.625rem;
+    background-color:#EFEFEF !important;
+    border-radius: 19px;
+    border-top: none;
   }
 
   .fc-event {
@@ -194,6 +210,7 @@ body .fc {
 
   .fc-scrollgrid {
     border-inline-start: none;
+    border: none;
   }
 
   .fc-daygrid-day {
