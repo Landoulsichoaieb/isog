@@ -48,7 +48,7 @@ const headers = [
   },
   {
     title: 'Action',
-    key: 'lieu',
+    key: 'actions',
   },
 ]
 const editItem = item => {
@@ -99,22 +99,13 @@ onMounted(() => {
     :headers="headers"
     :items="data"
     :items-per-page="5"
-    show-select
-    class="vdatatable"
+    class="user-table"
   >
     <!-- full name -->
     <template #item.fullName="{ item }">
       <div class="d-flex align-center">
         <div class="d-flex flex-column ms-3">
           <span class="d-block font-weight-medium text-high-emphasis text-truncate color-name">{{ item.fullName }}</span>
-          <small class="phone-nbr-container">
-            <img
-              :src="phoneimg" 
-              alt="telephone"
-              class="img-fluid phone-img"
-            />  
-            <span class="phone-nbr">{{ item.phone }}</span>
-          </small>
         </div>
       </div>
     </template>
@@ -452,7 +443,7 @@ cursor:pointer;}
 .action-icon-border-red{
   border: solid 1px #E31051;
 }
-.vdatatable {
+.user-table {
   --v-table-row-height: 56px;
   --v-table-header-height: 40px !important;
   color: #133155;
@@ -469,12 +460,8 @@ cursor:pointer;}
       display: flex;
       justify-content: center;
     }
-    &:first-child {
-      background-color: #ffffff;
-      border: none !important;
-    }
 
-    &:nth-child(2) {
+    &:first-child {
       border-radius: 11px 0px 0px 11px;  // Set border-radius for the second th
     }
 
@@ -482,10 +469,10 @@ cursor:pointer;}
       border-radius: 0px 11px 11px 0px;
     }
   }
-  th:not(:nth-child(4)):not(:last-child) {
+  th:not(:last-child) {
     position: relative;
   }
-  th:not(:nth-child(4)):not(:last-child)::after {
+  th:not(:last-child)::after {
       content: '';
       position: absolute;
       right: 0;
@@ -494,20 +481,20 @@ cursor:pointer;}
       width: 0;
       border-right: solid 1px #ffffff;
   }
+
   tr:first-child td {
   
   border-top: solid 1px #dddde0;
-    &:nth-child(2) {
+    &:first-child {
         border-radius: 11px 0px 0px 0px;
     }
     &:last-child {
         border-radius: 0px 11px 0px 0px;
     }
   }
-
   tr:last-child td {
 
-    &:nth-child(2) {
+    &:first-child {
         border-radius: 0px 0px 0px 11px;
     }
     &:last-child {
@@ -515,25 +502,20 @@ cursor:pointer;}
     }
   }
   td{
+    text-align: center;
     border-bottom:solid 1px #dddde0 ;
     &:first-child {
-        border: none !important;
-    }
-    &:nth-child(2) {
       border-left:solid 1px #dddde0;
+      text-align: center;
+
     }
 
     &:last-child {
-        
+        text-align: center;  
       border-right:solid 1px #dddde0;
     }
   }
 }
-.custom-checkbox-checked{
-  background-color: #133155;
-}
-// 👉 Datatable
-
 .v-data-table{
   table{
     tbody{
