@@ -198,7 +198,12 @@ const elementId = computed(() => {
 /* stylelint-disable no-descending-specificity */
 @use "flatpickr/dist/flatpickr.css";
 @use "@core/scss/base/mixins";
-
+@font-face {
+  font-family: 'geomanist-medium';
+  src: url('/fonts/Geomanist-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 .flat-picker-custom-style {
   position: absolute;
   color: inherit;
@@ -265,10 +270,10 @@ input[altinputclass="inlinePicker"] {
     color: $body-color;
 
     &.today {
-      border-color: rgb(var(--v-theme-primary));
+      border-color: #E5A439;
 
       &:hover {
-        border-color: rgb(var(--v-theme-primary));
+        border-color: #E5A439;
         background: transparent;
         color: $body-color;
       }
@@ -431,6 +436,11 @@ input[altinputclass="inlinePicker"] {
 .flatpickr-current-month {
   .flatpickr-monthDropdown-months {
     appearance: none;
+    font-family: "geomanist-medium";
+    font-size: 14px;
+    color: #E5A439 !important;
+    min-width: 70px!important;
+    position: relative;
   }
 
   .flatpickr-monthDropdown-months,
@@ -452,6 +462,9 @@ input[altinputclass="inlinePicker"] {
 
     .numInput.cur-year {
       font-weight: 500;
+      font-family: "geomanist-medium";
+      font-size: 14px;
+      color: #E5A439 !important;
     }
   }
 }
@@ -470,17 +483,19 @@ input[altinputclass="inlinePicker"] {
     display: flex;
     align-items: center;
     border-radius: 5rem;
-    background: rgba(var(--v-theme-surface-variant), var(--v-selected-opacity));
+    //background: rgba(var(--v-theme-surface-variant), var(--v-selected-opacity));
     block-size: 1.75rem;
     inline-size: 1.75rem;
     inset-block-start: 0.75rem !important;
     margin-block: 0.1875rem;
     padding-block: 0.25rem;
     padding-inline: 0.4375rem;
+    
   }
 
   .flatpickr-next-month {
     inset-inline-end: 1.05rem !important;
+    
   }
 
   .flatpickr-prev-month {
@@ -508,5 +523,8 @@ input[altinputclass="inlinePicker"] {
 // Update hour font-weight
 .flatpickr-time input.flatpickr-hour {
   font-weight: 400;
+}
+.v-navigation-drawer{
+  width:248px !important;
 }
 </style>

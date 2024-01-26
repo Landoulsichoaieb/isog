@@ -73,8 +73,6 @@ const none = () => {
             </VBtn>
           </div>-->
 
-          <VDivider />
-
           <div class="d-flex align-center justify-center pa-2 mb-3">
             <AppDateTimePicker
               :model-value="new Date().toJSON().slice(0, 10)"
@@ -86,7 +84,7 @@ const none = () => {
 
           <VDivider />
           
-          <div class="pa-3">
+          <div class="pt-3">
             <p class="text-sm text-uppercase text-disabled mb-3">
                 <div>
                     <agendatuteur></agendatuteur>
