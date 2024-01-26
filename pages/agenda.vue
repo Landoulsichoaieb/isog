@@ -32,6 +32,23 @@ const { isLeftSidebarOpen } = useResponsiveLeftSidebar()
 const { refCalendar, calendarOptions, addEvent, updateEvent, removeEvent, jumpToDate } = useCalendar(event, isEventHandlerSidebarActive, isLeftSidebarOpen)
 
 
+calendarOptions.headerToolbar = {
+  left: 'timeGridDay,timeGridWeek,dayGridMonth', // Change to your desired view buttons
+  center: '',
+  right: 'today prev,next', // Change to your desired navigation buttons
+};
+
+// Set initial view
+calendarOptions.initialView = 'timeGridWeek'; // Change to your desired initial view
+
+// Set buttonText for French
+calendarOptions.buttonText = {
+  today: 'Aujourd\'hui',
+  month: 'Mois',
+  week: 'Semaine',
+  day: 'Jour',
+};
+
 
 const openedPanels = ref([0,1,2,3,4,5])
 
@@ -47,6 +64,7 @@ const none = () => {
 }
 
 </script>
+
 
 <template>
   <div>
@@ -238,4 +256,5 @@ const none = () => {
   .v-navigation-drawer--left{
     border: none;
   }
+
 </style>
