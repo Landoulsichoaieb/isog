@@ -1,18 +1,18 @@
 <script setup>
-import FlatPickr from 'vue-flatpickr-component'
-import { useTheme } from 'vuetify'
+import FlatPickr from 'vue-flatpickr-component';
+import { useTheme } from 'vuetify';
 import {
 VField,
 filterFieldProps,
 makeVFieldProps,
-} from 'vuetify/lib/components/VField/VField'
+} from 'vuetify/lib/components/VField/VField';
 import {
 VInput,
 makeVInputProps,
-} from 'vuetify/lib/components/VInput/VInput'
+} from 'vuetify/lib/components/VInput/VInput';
 
-import { useConfigStore } from '@core/stores/config'
-import { filterInputAttrs } from 'vuetify/lib/util/helpers'
+import { useConfigStore } from '@core/stores/config';
+import { filterInputAttrs } from 'vuetify/lib/util/helpers';
 
 const props = defineProps({
   autofocus: Boolean,
@@ -112,6 +112,7 @@ const elementId = computed(() => {
   
   return _elementIdToken ? `app-picker-field-${ _elementIdToken }-${ Math.random().toString(36).slice(2, 7) }` : undefined
 })
+
 </script>
 
 <template>
@@ -489,8 +490,7 @@ input[altinputclass="inlinePicker"] {
     inset-block-start: 0.75rem !important;
     margin-block: 0.1875rem;
     padding-block: 0.25rem;
-    padding-inline: 0.4375rem;
-    
+    padding-inline: 0.4375rem;    
   }
 
   .flatpickr-next-month {

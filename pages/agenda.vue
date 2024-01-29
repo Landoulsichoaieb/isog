@@ -4,8 +4,8 @@ blankEvent,
 useCalendar,
 } from '@/views/apps/calendar/useCalendar';
 import { useCalendarStore } from '@/views/apps/calendar/useCalendarStore';
+import frLocale from '@fullcalendar/core/locales/fr';
 import FullCalendar from '@fullcalendar/vue3';
-
 // Components
 import CalendarEventHandler from '@/views/apps/calendar/CalendarEventHandler.vue';
 import agendabox from './agendaComponents/agendabox';
@@ -31,7 +31,6 @@ const { isLeftSidebarOpen } = useResponsiveLeftSidebar()
 // 👉 useCalendar
 const { refCalendar, calendarOptions, addEvent, updateEvent, removeEvent, jumpToDate } = useCalendar(event, isEventHandlerSidebarActive, isLeftSidebarOpen)
 
-
 calendarOptions.headerToolbar = {
   left: 'timeGridDay,timeGridWeek,dayGridMonth', // Change to your desired view buttons
   center: '',
@@ -40,6 +39,9 @@ calendarOptions.headerToolbar = {
 
 // Set initial view
 calendarOptions.initialView = 'timeGridWeek'; // Change to your desired initial view
+
+  // Set the French locale for FullCalendar
+  calendarOptions.locales = [frLocale];
 
 // Set buttonText for French
 calendarOptions.buttonText = {
@@ -126,6 +128,7 @@ const none = () => {
             <FullCalendar
               ref="refCalendar"
               :options="calendarOptions"
+              :locales="locales"
             />
           </VCard>
         </VMain>
