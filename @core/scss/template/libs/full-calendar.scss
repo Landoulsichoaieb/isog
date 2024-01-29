@@ -80,11 +80,9 @@ body .fc {
     letter-spacing: 0.45px;
     line-height: 55px;
   }
-
   .fc-timegrid .fc-timegrid-slots .fc-timegrid-slot {
     block-size: 3rem;
   }
-
   // Removed double border in list view
   .fc-list {
     border-block-end: none;
@@ -212,13 +210,33 @@ body .fc {
     border-radius: 19px;
     border-top: none;
   }
-
+  .fc-timegrid-slot{
+    background-color:#EFEFEF !important;
+  }
+  .fc-timegrid-slots table colgroup col{
+    width: 107px !important;
+  }
+  .fc-scrollgrid-sync-table colgroup col{
+    width: 107px !important;
+  }
+  .fc-col-header colgroup col{
+    width: 107px !important;
+  }
+  .fc-timegrid-cols table colgroup col{
+    width: 107px !important;
+  }
   .fc-event {
     border-color: transparent;
     cursor: pointer;
     margin-block-end: 0.3rem;
     padding-block: 0.1875rem;
     padding-inline: 0.3125rem;
+    background-color:#fff !important;
+    border-radius: 8px;
+  }
+  .fc-daygrid-body-natural{
+    display: none;
+    border: none;
   }
 
   .fc-event-main {
@@ -227,8 +245,7 @@ body .fc {
     font-weight: 500;
     padding-inline: 0.25rem;
   }
-
-  tbody[role="rowgroup"] {
+  tbody[role="rowgroup"] {fc-scrollgrid-section-body
     > tr > td[role="presentation"] {
       border: none;
     }

@@ -90,8 +90,12 @@ const none = () => {
               Add event
             </VBtn>
           </div>-->
-
+          <div class="calendar-picker-header">
+              <button class="fc-icon fc-icon-chevron-left back-icon"></button>
+              <span class="calendar-picker-header-title">Calendrier</span>
+            </div>
           <div class="d-flex align-center justify-center pa-2 mb-3">
+            
             <AppDateTimePicker
               :model-value="new Date().toJSON().slice(0, 10)"
               :config="{ inline: true }"
@@ -181,6 +185,12 @@ const none = () => {
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Geomanist-medium';
+  src: url('/fonts/Geomanist-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 .v-layout {
   overflow: visible !important;
 
@@ -206,7 +216,6 @@ const none = () => {
     column-gap: 0.5rem;
     row-gap: 1rem;
   }
-
   .fc-toolbar-chunk {
     display: flex;
     align-items: center;
@@ -256,5 +265,22 @@ const none = () => {
   .v-navigation-drawer--left{
     border: none;
   }
-
+.calendar-picker-header{
+  float: left;
+  width: 248px;
+margin-top: 28px;}
+  .calendar-picker-header-title{
+  float: left;
+  font-family: "Geomanist-medium";
+  font-size: 28px;
+  margin-left: 21px;
+  }
+  .back-icon{
+  float: left;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #E2E2E2;
+  border-radius: 8px;
+  color: #E5A439;
+  font-size:20px;}
 </style>
