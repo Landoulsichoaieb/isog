@@ -1,9 +1,9 @@
-import { useConfigStore } from '@core/stores/config';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import interactionPlugin from '@fullcalendar/interaction';
-import listPlugin from '@fullcalendar/list';
-import timeGridPlugin from '@fullcalendar/timegrid';
-import { promotionCalendarStore } from '../pages/agendaComponents/calendarstore/promotionCalendarStore';
+import { useCalendarStore } from '@/views/apps/calendar/useCalendarStore'
+import { useConfigStore } from '@core/stores/config'
+import dayGridPlugin from '@fullcalendar/daygrid'
+import interactionPlugin from '@fullcalendar/interaction'
+import listPlugin from '@fullcalendar/list'
+import timeGridPlugin from '@fullcalendar/timegrid'
 
 export const blankEvent = {
   title: '',
@@ -25,8 +25,8 @@ export const blankEvent = {
 export const useCalendar = (event, isEventHandlerSidebarActive, isLeftSidebarOpen) => {
   const configStore = useConfigStore()
 
-// 👉 Store
-const store = promotionCalendarStore()
+  // 👉 Store
+  const store = useCalendarStore()
 
   // 👉 Calendar template ref
   const refCalendar = ref()

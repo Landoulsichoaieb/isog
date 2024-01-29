@@ -1,11 +1,11 @@
 <script setup>
+import frLocale from '@fullcalendar/core/locales/fr';
+import FullCalendar from '@fullcalendar/vue3';
 import {
 blankEvent,
 useCalendar,
-} from '@/views/apps/calendar/useCalendar';
-import { useCalendarStore } from '@/views/apps/calendar/useCalendarStore';
-import frLocale from '@fullcalendar/core/locales/fr';
-import FullCalendar from '@fullcalendar/vue3';
+} from './agendaComponents/calendarstore/usecalendar/useCalendar';
+import { useCalendarStore } from './agendaComponents/calendarstore/usecalendar/useCalendarStore';
 // Components
 import CalendarEventHandler from '@/views/apps/calendar/CalendarEventHandler.vue';
 import agendabox from './agendaComponents/agendabox';
@@ -65,6 +65,7 @@ const none = () => {
   openedPanels.value = []
 }
 
+
 </script>
 
 
@@ -105,9 +106,7 @@ const none = () => {
               @input="jumpToDate($event.target.value)"
             />
           </div>
-
           <VDivider />
-          
           <div class="pt-3">
             <p class="text-sm text-uppercase text-disabled mb-3">
                 <div>
@@ -117,12 +116,10 @@ const none = () => {
                     <agendabox></agendabox>
                     <agendapromotion></agendapromotion>
                     <agendalieu></agendalieu>
-
                 </div>
             </p>
           </div>
         </VNavigationDrawer>
-
         <VMain>
           <VCard flat>
             <FullCalendar

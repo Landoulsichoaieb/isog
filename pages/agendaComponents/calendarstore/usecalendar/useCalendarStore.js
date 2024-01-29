@@ -1,4 +1,4 @@
-export const promotionCalendarStore = defineStore('calendar', {
+export const useCalendarStore = defineStore('calendar', {
     // arrow function recommended for full type inference
     state: () => ({
       availableCalendars: [
